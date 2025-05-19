@@ -310,6 +310,7 @@ public class JavaBasics {
 }
 */
 
+// Print Subarrays with Sum ✅
 /*
 public class JavaBasics {
 
@@ -349,10 +350,53 @@ public class JavaBasics {
         return sum;
     }
 
+    // Maximum Subarray Sum ✅
+    public static int maxSubarraySum(int numbers[]) {
+        int maxSum = Integer.MIN_VALUE;
+        int currSum = 0;
+
+        for(int i=0; i<numbers.length; i++) {
+            currSum += numbers[i];
+
+            if (currSum > maxSum) {
+                maxSum = currSum;
+            }
+
+            if (currSum < 0) {
+                currSum = 0;
+            }
+        }
+
+        return maxSum;
+    }
+
+    // Minimum Subarray Sum ✅
+    public static int minSubarraySum(int numbers[]) {
+        int minSum = Integer.MAX_VALUE;
+        int currSum = 0;
+
+        for(int i=0; i<numbers.length; i++) {
+            currSum += numbers[i];
+
+            if (currSum < minSum) {
+                minSum = currSum;
+            }
+
+            if (currSum > 0) {
+                currSum = 0;
+            }
+        }
+
+        return minSum;
+    }
+
     // Main method to test the printSubarrays method
     public static void main(String[] args) {
         int numbers[] = {2, 4, 6, 8, 10};
         printSubarrays(numbers);
+
+        System.out.println("Maximum Subarray Sum: " + maxSubarraySum(numbers));
+        System.out.println("Minimum Subarray Sum: " + minSubarraySum(numbers));
     }
 }
 */
